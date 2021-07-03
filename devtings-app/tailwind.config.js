@@ -1,0 +1,29 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require('tailwindcss/colors')
+
+module.exports = {
+  mode: "jit",
+  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  darkMode: false, // or 'media' or 'class'
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ["Open Sans", ...defaultTheme.fontFamily.sans],
+      },
+      colors: {
+        primary: "#3491DF",
+        primaryDark: "#3C51E9",
+        secondary: "#E70000",
+        secondaryDark: "#D20708",
+        success: "#3DCC54",
+        warning: "#F1CC24",
+        error: "#F14624",
+        info: "#FAF0B0",
+      },
+    },
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [],
+};
