@@ -8,6 +8,9 @@
 
 .sticky-header {
   background-color: red;
+  .is-partial {
+    transform: translateY(-40px);
+  }
 }
 .sticky-header:before {
   content: "";
