@@ -1,19 +1,32 @@
+import { useState } from "react";
 import { useEffect } from "react";
+import { Category } from "../types/category";
+import CategoriesDropDown from "./CategoriesDropDown";
 import Logo from "./logo";
 
-function Header({ props }) {
+function Header({ categories }: { categories: Category[] }) {
+  const [productMenu, setProductMenu] = useState(false);
+  const showProductMenu = () => setProductMenu(true);
+  const hideProductMenu = () => setProductMenu(false);
+
   useEffect(() => {
     let scrollPosition = window.scrollY;
+    let prevScrollPosition;
+    const hideHeaderPosition = 63;
     const header = document.getElementById("header");
 
     window.addEventListener("scroll", function () {
       scrollPosition = window.scrollY;
       if (header) {
-        if (scrollPosition >= 63) {
+        if (
+          scrollPosition >= prevScrollPosition &&
+          scrollPosition >= hideHeaderPosition
+        ) {
           header.classList.add("is-partial");
         } else {
           header.classList.remove("is-partial");
         }
+        prevScrollPosition = scrollPosition;
       }
     });
   });
@@ -24,7 +37,15 @@ function Header({ props }) {
         className="bg-white transition-transform duration-200 translate-y-0 left-0 right-0 top-0 z-20 fixed shadow-sm"
       >
         <nav className="nav-bar header-content relative flex justify-between max-w-4xl px-4 mx-auto items-center">
-          <div>Product Reviews</div>
+          <div
+          className="h-full flex items-center"
+            onClick={showProductMenu}
+            onMouseEnter={showProductMenu}
+            onMouseLeave={hideProductMenu}
+          >
+            {productMenu && <CategoriesDropDown {...{categories}} />}
+            Product Reviews
+          </div>
           <div>Search Bar</div>
           <div>About</div>
         </nav>
