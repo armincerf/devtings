@@ -51,7 +51,7 @@ function Header({ categories }: { categories: Category[] }) {
         </nav>
         <div className="bg-primary">
           <div className="logo-bar max-w-4xl px-4 mx-auto flex items-center translate-x-0 top-0 left-0 right-0">
-            <a href="/" className="logo">
+            <a href="/" className="logo" aria-label="home page">
               <Logo />
             </a>
           </div>

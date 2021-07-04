@@ -23,7 +23,7 @@ function CategoryCards({ categories }: { categories: Category[] }) {
               <h3>{reviews.length} reviews</h3>
               <div>{benchmark_version}</div>
             </div>
-            <div className="flex flex-row">
+            <div className="flex flex-row text-xl overflow-x-scroll">
               <span className="uppercase font-bold pr-2">Best</span>
               {dedupedTags(reviews).map((tag) => (
                 <a key={tag} href={`/${category_name}/${tag}`} className="pr-2">

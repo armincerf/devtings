@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import slugify from "slugify";
 import CategoryCards from "../components/categoryCards";
 import Header from "../components/header";
@@ -15,9 +16,9 @@ const categoryNames = [
 const tags = {
   "Frontend Frameworks": ["VanilaJS", "React", "Svelte", "Ember.js", "Next.js"],
   "Backend Frameworks": ["Clojure + Edge", "Java", "Node.js"],
-  "Databases": ["PostgreSQL", "Mongo", "Crux", "Firebase"],
-  "Programming Languages": ["C", "Rust", "JavaScript", "Clojure"]
-}
+  Databases: ["PostgreSQL", "Mongo", "Crux", "Firebase"],
+  "Programming Languages": ["Rust", "JavaScript", "Clojure"],
+};
 
 const genReviews = (category_name): Review => {
   return {
@@ -36,7 +37,9 @@ const genCategory = (category: Category["category_name"]): Category => {
   };
 };
 
-export const categories: Category[] = categoryNames.map((name) => genCategory(name));
+export const categories: Category[] = categoryNames.map((name) =>
+  genCategory(name)
+);
 
 export default function Home() {
   //const util = require('util')
