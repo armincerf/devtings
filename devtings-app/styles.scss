@@ -44,7 +44,7 @@
     min-height: 400px;
     max-height: 800px;
     h1 {
-      @apply text-7xl font-bold text-white uppercase pb-12;
+      @apply text-5xl sm:text-7xl font-bold text-white uppercase pb-12;
       line-height: 0.9;
       letter-spacing: -5px;
       text-shadow: 0px 0px 5px rgb(0 0 0 / 40%);
