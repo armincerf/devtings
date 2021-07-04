@@ -1,0 +1,32 @@
+{
+  "category_id": "frontend-frameworks",
+  "category_name": "Frontend Frameworks",
+  "benchmark_version": "v0.1",
+  "reviews": [
+    {
+      "product": "0.acyn7p3991o",
+      "benchmark_date": "Sun Jul 04 2021 13:59:46 GMT+0100 (British Summer Time)",
+      "tags": ["VanilaJS", "React", "Svelte", "Ember.js", "Next.js"]
+    },
+    {
+      "product": "0.acyn7p3991o",
+      "benchmark_date": "Sun Jul 04 2021 13:59:46 GMT+0100 (British Summer Time)",
+      "tags": ["VanilaJS", "React", "Svelte", "Ember.js", "Next.js"]
+    },
+    {
+      "product": "0.acyn7p3991o",
+      "benchmark_date": "Sun Jul 04 2021 13:59:46 GMT+0100 (British Summer Time)",
+      "tags": ["VanilaJS", "React", "Svelte", "Ember.js", "Next.js"]
+    },
+    {
+      "product": "0.acyn7p3991o",
+      "benchmark_date": "Sun Jul 04 2021 13:59:46 GMT+0100 (British Summer Time)",
+      "tags": ["VanilaJS", "React", "Svelte", "Ember.js", "Next.js"]
+    },
+    {
+      "product": "0.acyn7p3991o",
+      "benchmark_date": "Sun Jul 04 2021 13:59:46 GMT+0100 (British Summer Time)",
+      "tags": ["VanilaJS", "React", "Svelte", "Ember.js", "Next.js"]
+    }
+  ]
+}

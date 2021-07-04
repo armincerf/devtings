@@ -3,7 +3,11 @@
   --navBarHeight: 40px;
   --headerHeight: calc(var(--logoBarHeight) + var(--navBarHeight));
   --heroHeight: 55vh;
-  --defaultFont: 'Open Sans', sans-serif;
+  --defaultFont: "Open Sans", sans-serif;
+}
+
+.bold-title {
+  @apply tracking-tighter font-bold text-gray-700 uppercase pr-4;
 }
 
 .sticky-header {
@@ -50,10 +54,10 @@
       text-shadow: 0px 0px 5px rgb(0 0 0 / 40%);
     }
     p {
-        @apply px-4 py-2 text-lg relative;
-        background-color: rgba(0,0,0,0.1);
-        left: -16px;
-        font-family: "Open Sans", sans-serif;
+      @apply px-4 py-2 text-lg relative;
+      background-color: rgba(0, 0, 0, 0.1);
+      left: -16px;
+      font-family: "Open Sans", sans-serif;
     }
   }
   @apply relative text-white justify-center items-center mb-2 w-full;

@@ -1,4 +1,3 @@
-import { randomInt } from "crypto";
 import Head from "next/head";
 import slugify from "slugify";
 import CategoryCards from "../components/categoryCards";
@@ -30,16 +29,19 @@ const genReviews = (category_name): Review => {
 
 const genCategory = (category: Category["category_name"]): Category => {
   return {
-    category_id: slugify(category),
+    category_id: slugify(category).toLowerCase(),
     category_name: category,
     benchmark_version: "v0.1",
     reviews: Array(5).fill(genReviews(category)),
   };
 };
 
-const categories: Category[] = categoryNames.map((name) => genCategory(name));
+export const categories: Category[] = categoryNames.map((name) => genCategory(name));
 
 export default function Home() {
+  //const util = require('util')
+  //console.log('cats', util.inspect(categories, false, null, true));
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       <Head>
