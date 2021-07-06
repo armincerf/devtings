@@ -36,16 +36,16 @@ export default function CategoryPage({ category, categories }: {category: Catego
 
       <main className="flex flex-col w-full ">
         <section className=" pt-16 w-full flex flex-col mx-auto px-4 max-w-4xl">
-          <div className=" text-6xl bold-title mb-8">
+          <div className=" text-6xl bold-title text-gray-800 mb-8">
             {category_name}
           </div>
           <div className="flex items-center">
             <span className="text-5xl font-extralight text-secondary pr-4">{reviews.length}</span>
-             <span className="bold-title">Reviews</span> 
+             <span className="bold-title text-gray-800">Reviews</span> 
           </div>
           <div className="flex items-center">
             <span className="text-5xl font-extralight text-secondary pr-4">{benchmark_version}</span>
-             <span className="bold-title">Test Methodology</span> 
+             <span className="bold-title text-gray-800">Test Methodology</span> 
              <span>Which test should we add or improve? <Link href="/discuss"><a className="text-secondary font-bold">Discuss here</a></Link></span>
           </div>
           <p className="my-6 text-lg">Start with our picks for the best {category_name} below. These are the ones we recommend based on our testing and in-depth reviews.</p>

@@ -19,7 +19,7 @@ function CategoryCards({ categories }: { categories: Category[] }) {
             className="col-span-1 bg-white rounded-lg shadow divide-y divide-gray-200"
           >
             <div className="bg-primary flex-row">
-              <h2>{category_name}</h2>
+              <h2 className="bold-title text-white">{category_name}</h2>
               <h3>{reviews.length} reviews</h3>
               <div>{benchmark_version}</div>
             </div>
