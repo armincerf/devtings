@@ -3,45 +3,21 @@ import Image from "next/image";
 import slugify from "slugify";
 import CategoryCards from "../components/categoryCards";
 import Header from "../components/header";
+import { getAllCategories, getCategoryBySlug } from "../lib/api";
+import { GetStaticProps } from "next";
 import { Category } from "../types/category";
-import { Review } from "../types/review";
 
-const categoryNames = [
-  "Frontend Frameworks",
-  "Backend Frameworks",
-  "Databases",
-  "Programming Languages",
-];
+export const getStaticProps: GetStaticProps = async (_context) => {
+  const categories = getAllCategories();
 
-const tags = {
-  "Frontend Frameworks": ["VanilaJS", "React", "Svelte", "Ember.js", "Next.js"],
-  "Backend Frameworks": ["Clojure + Edge", "Java", "Node.js"],
-  Databases: ["PostgreSQL", "Mongo", "Crux", "Firebase"],
-  "Programming Languages": ["Rust", "JavaScript", "Clojure"],
-};
-
-const genReviews = (category_name): Review => {
   return {
-    product: Math.random().toString(36),
-    benchmark_date: new Date().toString(),
-    tags: tags[category_name],
+    props: {
+      categories: categories,
+    },
   };
 };
 
-const genCategory = (category: Category["category_name"]): Category => {
-  return {
-    category_id: slugify(category).toLowerCase(),
-    category_name: category,
-    benchmark_version: "v0.1",
-    reviews: Array(5).fill(genReviews(category)),
-  };
-};
-
-export const categories: Category[] = categoryNames.map((name) =>
-  genCategory(name)
-);
-
-export default function Home() {
+export default function Home({ categories }: {category: Category, categories: Category[]}) {
   //const util = require('util')
   //console.log('cats', util.inspect(categories, false, null, true));
 
