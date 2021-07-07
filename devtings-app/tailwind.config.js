@@ -1,5 +1,5 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
-const colors = require('tailwindcss/colors')
+const colors = require("tailwindcss/colors");
 
 module.exports = {
   mode: "jit",
@@ -9,6 +9,15 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Open Sans", ...defaultTheme.fontFamily.sans],
+      },
+      keyframes: {
+        fadeOut: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
+        },
+      },
+      animation: {
+        fadeOut: "fadeOut .3s forwards",
       },
       colors: {
         primary: "#3491DF",

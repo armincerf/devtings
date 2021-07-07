@@ -1,0 +1,3 @@
+.transitionBez {
+    transition-timing-function: .7s cubic-bezier(.77, 0, .18, 1);
+}
