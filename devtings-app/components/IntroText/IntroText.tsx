@@ -10,15 +10,15 @@ interface IIntroTextProps {
 }
 
 const IntroText = ({ categories }: IIntroTextProps) => {
-  const [titlePos, setTitlePos] = useState(0);
+  const [titleHidden, setTitleHidden] = useState(false);
   const [categoryIndex, setCategoryIndex] = useState(0);
   const rotateTitle = async () => {
-    await new Promise((r) => setTimeout(r, 500));
-    setTitlePos(0);
+    await new Promise((r) => setTimeout(r, 350));
+    setTitleHidden(false);
     setCategoryIndex((categoryIndex + 1) % categories.length);
   };
   useInterval(() => {
-    setTitlePos(20);
+    setTitleHidden(true);
     rotateTitle();
   }, 5000);
   return (
@@ -26,7 +26,7 @@ const IntroText = ({ categories }: IIntroTextProps) => {
       <h2 className="mt-1 text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:leading-none sm:text-6xl lg:text-5xl xl:text-6xl ratio">
         <div className="overflow-hidden block">
           <span
-            className={`block whitespace-nowrap transform translate-y-${titlePos} transition-all ease-in duration-300 motion-reduce:transition-none`}
+            className={`block whitespace-nowrap transform ${titleHidden ? 'translate-y-80' : 'translate-y-0'} transition-all ease-in duration-500 motion-reduce:transition-none`}
           >
             {categories && categories[categoryIndex].category_name}
           </span>
